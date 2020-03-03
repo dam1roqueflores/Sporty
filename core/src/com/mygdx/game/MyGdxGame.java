@@ -6,17 +6,54 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 public class MyGdxGame extends ApplicationAdapter {
 
 	//Necesitamos un controlador
 	private Controlador miControlador;
+	// Parte del GUI
+	private JPanel Pform;
+
+	private JLabel Lminutos;
+	private JLabel Lkilos;
+	private JLabel Lactividad;
+
+	private JTextField Tminutos;
+	private JTextField Tkilos;
+
+	private JComboBox Cactividad;
+
+	private JButton Bcalcular;
 	/*
 	SpriteBatch batch;
 	Texture img;*/
 	
 	@Override
 	public void create () {
+
+		//creamos el controlador
 		miControlador=new Controlador();
+		miControlador.iniComboBox();
+
+		// creamos el GUI
+		Pform=new JPanel();
+
+		Lminutos=new JLabel();
+		Lkilos=new JLabel();
+		Lactividad=new JLabel();
+
+		Tminutos=new JTextField();
+		Tkilos=new JTextField();
+
+		Cactividad=new JComboBox();
+
+		Bcalcular=new JButton();
+
 		/*batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");*/
 	}
